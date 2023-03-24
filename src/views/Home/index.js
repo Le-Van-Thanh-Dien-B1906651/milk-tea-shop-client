@@ -11,14 +11,17 @@ const cx = classNames.bind(styles);
 
 function Home() {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchApi = async () => {
+            setLoading(true);
             await request
                 .get('/drink')
                 .then((res) => {
                     setData(res.data.drinks);
                 })
+            setLoading(false);
         }
         fetchApi();
     }, [])
@@ -30,7 +33,7 @@ function Home() {
                 <CarouselAds />
                 <h2 className={cx('title')}>SẢN PHẨM NỔI BẬT</h2>
                 <div className={cx('listCard')}>
-                    <DrinkCard data={data} />
+                    <DrinkCard data={data} loading={loading} />
                 </div>
             </main>
         </>

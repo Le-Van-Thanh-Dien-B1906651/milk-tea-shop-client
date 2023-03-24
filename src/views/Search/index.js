@@ -12,6 +12,7 @@ const cx=classNames.bind(styles);
 const dataContext = createContext();
 
 function Search() {
+    const [loading, setLoading] = useState(false);
     const [searchResult, setSearchResult] = useState([]); 
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(8); // number of items on a page
@@ -27,11 +28,13 @@ function Search() {
 
     useEffect(() => {
         const fetchApi = async () => {
+            setLoading(true);
             await request
                 .get(`/drink/search?q=${query}`)
                 .then((res) => {
                     setSearchResult(res.data.searchResult);
                 })
+            setLoading(false);
         }
 
         fetchApi();
@@ -46,7 +49,7 @@ function Search() {
                         ? <p className={cx('title')}>Kết quả tìm kiếm: '{query}'</p>  
                         : <p className={cx('title')}>Không tìm thấy kết quả tìm kiếm: '{query}'</p>}
                     <div className={cx('content')}>
-                        <MenuCard data={currentItems} />
+                        <MenuCard data={currentItems} loading={loading} />
                     </div>
                     {Math.ceil(searchResult.length/itemsPerPage)>1 && <PaginationComponent
                         itemsPerPage={itemsPerPage}

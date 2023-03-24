@@ -11,6 +11,7 @@ const cx = classNames.bind(styles);
 const dataContext = createContext();
 
 function Menu() {
+    const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(8); // number of items on a page
@@ -24,11 +25,13 @@ function Menu() {
 
     useEffect(() => {
         const fetchApi = async () => {
+            setLoading(true);
             await request
                 .get('/drink')
                 .then((res) => {
                     setData(res.data.drinks);
                 })
+            setLoading(false);
         }
         fetchApi();
     }, [])
@@ -40,13 +43,14 @@ function Menu() {
                 <main className={`container`}>
                     <h2 className={`${cx('title')} text-center`}>MENU</h2>
                     <div className={cx('listCard')}>
-                        <MenuCard data={currentItems} />
+                        <MenuCard data={currentItems} loading={loading} />
                     </div>
                     <PaginationComponent
                         itemsPerPage={itemsPerPage}
                         totalItems={data.length}
                         paginate={paginate}
                         currentPage={currentPage}
+                        loading={loading}
                     />
                 </main>
             </dataContext.Provider>

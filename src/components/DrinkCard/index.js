@@ -7,9 +7,14 @@ import styles from './DrinkCard.module.scss';
 
 const cx = classNames.bind(styles);
 
-function DrinkCard({ data }) {
+function DrinkCard({ data, loading }) {
     let drinks = [];
     const navigate = useNavigate();
+
+    if (loading)
+        return (
+            <h2>Loading . . . . .</h2>
+        )
 
     data.forEach(item => {
         if (item.category.name !== 'TOPPING'){

@@ -6,11 +6,16 @@ import styles from './MenuCard.module.scss';
 
 const cx = classNames.bind(styles);
 
-function MenuCard({ data }) {
+function MenuCard({ data, loading }) {
     const navigate = useNavigate();
 
     let twoColumns = [];
     let rows = [];
+
+    if (loading)
+        return (
+            <h2>Loading . . . . .</h2>
+        )
 
     for (let i=0; i<data.length; i+=2){
         let Item = [];
