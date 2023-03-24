@@ -1,0 +1,28 @@
+.wrapper {
+    max-width: 1180px;
+}
+
+.card {
+    border: none;
+    cursor: pointer;
+    width: 12.5rem;
+}
+
+.title {
+    min-height: 46px;
+    margin: 0;
+    
+}
+
+.price {
+    color: green;
+}
+
+.price, .title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

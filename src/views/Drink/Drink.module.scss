@@ -1,0 +1,38 @@
+.nav {
+    background-color: rgb(218, 222, 224);
+    padding: 4px 10px;
+    margin: 20px 0px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.name, .price, .desc {
+    border-bottom: solid #6d6b6b 1px;
+    font-weight: bold;
+}
+
+.name {
+    color: red;
+    font-size: 24px;
+}
+
+.price, .desc {
+    font-size: 20px;
+}
+
+.image {
+    width: 280px;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+.text {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--bs-red);
+    margin: 20px 0px;
+}
