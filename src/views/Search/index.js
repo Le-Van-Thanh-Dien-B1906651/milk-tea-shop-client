@@ -42,7 +42,9 @@ function Search() {
             <Header />
             <dataContext.Provider value={searchResult} >
                 <main className='container'>
-                    <p className={cx('title')}>Kết quả tìm kiếm: '{query}'</p>
+                    { searchResult.length>0  
+                        ? <p className={cx('title')}>Kết quả tìm kiếm: '{query}'</p>  
+                        : <p className={cx('title')}>Không tìm thấy kết quả tìm kiếm: '{query}'</p>}
                     <div className={cx('content')}>
                         <MenuCard data={currentItems} />
                     </div>
