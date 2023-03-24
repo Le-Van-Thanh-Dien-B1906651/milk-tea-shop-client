@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import request from '../../utils/request';
 import styles from './Home.module.scss';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import CarouselAds from '../../components/CarouselAds';
 import DrinkCard from '../../components/DrinkCard';
 
@@ -36,6 +37,7 @@ function Home() {
                     <DrinkCard data={data} loading={loading} />
                 </div>
             </main>
+            <Footer />
         </>
         
     )

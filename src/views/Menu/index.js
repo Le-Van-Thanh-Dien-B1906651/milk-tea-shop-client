@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import request from '../../utils/request';
 import styles from './Menu.module.scss';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import MenuCard from '../../components/MenuCard';
 import PaginationComponent from '../../components/PaginationComponent';
 
@@ -54,6 +55,7 @@ function Menu() {
                     />
                 </main>
             </dataContext.Provider>
+            <Footer />
         </>
     )
 }

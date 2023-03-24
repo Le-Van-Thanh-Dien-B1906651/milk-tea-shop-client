@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import styles from './About.module.scss';
 
 const cx = classNames.bind(styles);
@@ -23,6 +24,7 @@ function About() {
                     <div className={cx('textContent')}>Thời gian: 9h00 - 22h00</div>
                 </h3>
             </main>
+            <Footer />
         </>
     )
 }

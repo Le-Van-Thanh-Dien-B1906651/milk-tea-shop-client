@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import request from '../../utils/request';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import MenuCard from '../../components/MenuCard';
 import PaginationComponent from '../../components/PaginationComponent';
 
@@ -59,6 +60,7 @@ function Search() {
                     />}
                 </main>
             </dataContext.Provider >
+            <Footer />
         </>
     )
 }

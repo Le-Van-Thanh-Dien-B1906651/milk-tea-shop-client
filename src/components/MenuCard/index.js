@@ -42,21 +42,25 @@ function MenuCard({ data, loading }) {
     for (let i=0; i<twoColumns.length; i+=2){
         let Item = [];
         let html1 = (
-            <div className='row col-sm-6'>
-                {twoColumns[i]!==undefined && twoColumns[i].map(card => {
-                    return (
-                        card
-                    )
-                })}
+            <div className='col-sm-6'>
+                <div className='row'>
+                    {twoColumns[i]!==undefined && twoColumns[i].map(card => {
+                        return (
+                            card
+                        )
+                    })}
+                </div>
             </div>
         )
         let html2 = (
-            <div className='row col-sm-6'>
-                {twoColumns[i+1]!==undefined && twoColumns[i+1].map(card => {
-                    return (
-                        card
-                    )
-                })}
+            <div className='col-sm-6'>
+                <div className='row'>
+                    {twoColumns[i+1]!==undefined && twoColumns[i+1].map(card => {
+                        return (
+                            card
+                        )
+                    })}
+                </div>
             </div>
         )
         Item = (
@@ -70,7 +74,7 @@ function MenuCard({ data, loading }) {
 
     return (
         <div className='row'>
-            <div className='col'>
+            <div className='col-12'>
                 {rows.map(row => {
                     return row;
                 })}

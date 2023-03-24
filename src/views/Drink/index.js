@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import styles from './Drink.module.scss';
 import request from '../../utils/request';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import OrderModal from '../../components/OrderModal';
 
 const cx=classNames.bind(styles);
@@ -62,6 +63,7 @@ function Drink() {
                     </div>
                 </div>
             </main>
+            <Footer />
         </>
         
     )
